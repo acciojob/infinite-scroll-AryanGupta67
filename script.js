@@ -1,8 +1,8 @@
-const list = document.getElementById("infinite-list");
+const list = document.getElementById("infi-list");
 
 let itemCount = 0;
 
-// Function to create and append list items
+// Add list items to the list
 function addItems(count) {
   for (let i = 0; i < count; i++) {
     const li = document.createElement("li");
@@ -11,12 +11,11 @@ function addItems(count) {
   }
 }
 
-// Add 10 items initially
-addItems(10);
+// Initially add 2 items as per the test case
+addItems(2);
 
-// Infinite scroll logic
+// Detect when user scrolls to the bottom
 window.addEventListener("scroll", () => {
-  // Check if the user is near the bottom of the page
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
     addItems(2); // Add 2 more items
   }
